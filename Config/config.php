@@ -6,8 +6,8 @@ class Config {
 	var $type = "MySQL"; // Only MySQL
 	var $host = "localhost";
 	var $user = "root";
-	var $password = "1234";
-	var $db = "";
+	var $password = "";
+	var $db = "bookmarks";
 	var $login_table = "usuarios";
 	var $books_table = "bookmarks";
 	

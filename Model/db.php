@@ -1,6 +1,6 @@
 <?php
 
-include_once 'htdocs/BookmarksPHP/Config/config.php';
+include_once '../Config/config.php';
 
 class Model extends Config {
 	
@@ -13,6 +13,10 @@ class Model extends Config {
 				$this->handle = mysql_pconnect($this->host,$this->user,$this->password);
 				if(!$this->handle) {
 					die("Error ao conectar ao servidor<br/>".mysql_error($this->handle));
+				} else {
+					mysql_select_db($this->db, $this->handle) || die("Error ao acessar o DB<br/>".mysql_error());
+					}
+					
 				}
 			break;
 		}
@@ -56,6 +60,6 @@ class Model extends Config {
 		return $retorno;
 	}
 
-}
+
 
 ?>
